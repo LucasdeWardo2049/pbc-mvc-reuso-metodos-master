@@ -7,11 +7,8 @@ public class Pessoa {
     private String nome;
     private String endereco;
     private String telefone;
-
     private String email;
-
     private String cpf;
-
 
     public Pessoa() {
     }
@@ -30,6 +27,8 @@ public class Pessoa {
 
     public void setNome(String nome) {
         Validacao.validarSomenteLetrasEEspaco(nome);
+        Validacao.validarTamanhoMinimo(nome, 1);
+        Validacao.validarTamanhoMaximo(nome, 100);
         this.nome = nome;
     }
 
@@ -54,6 +53,7 @@ public class Pessoa {
     }
 
     public void setEmail(String email) {
+        Validacao.validarEmail(email);
         this.email = email;
     }
 
